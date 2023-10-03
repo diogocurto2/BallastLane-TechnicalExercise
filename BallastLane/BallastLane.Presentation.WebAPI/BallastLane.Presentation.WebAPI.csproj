@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>074ed476-7961-4149-a0aa-dfb40452cc50</UserSecretsId>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BallastLane.Products.Application\BallastLane.Products.Application.csproj" />
+    <ProjectReference Include="..\BallastLane.Products.Domain\BallastLane.Products.Domain.csproj" />
+    <ProjectReference Include="..\BallastLane.Products.Infra.DataAccess.SQLServerADO\BallastLane.Products.Infra.DataAccess.SQLServerADO.csproj" />
+    <ProjectReference Include="..\BallastLane.Security.Application\BallastLane.Security.Application.csproj" />
+    <ProjectReference Include="..\BallastLane.Security.Domain\BallastLane.Security.Domain.csproj" />
+    <ProjectReference Include="..\BallastLane.Security.Infra.DataAccess.SQLServerADO\BallastLane.Security.Infra.DataAccess.SQLServerADO.csproj" />
+  </ItemGroup>
+
+</Project>

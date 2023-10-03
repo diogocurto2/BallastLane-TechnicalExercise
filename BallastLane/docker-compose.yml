@@ -1,0 +1,25 @@
+version: '3.8'
+
+
+networks:
+    myAppNetwork:
+ 
+services:
+    ballastlane.DB: 
+        container_name: ballastlane.DB
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        ports:
+            - 1433:1433 
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=Strong@Passw0rd
+    ballastlane.products.presentation.webapi:
+        container_name: ballastlane.webapi
+        image: ${DOCKER_REGISTRY-}ballastlanewebapi
+        ports:
+            - 8001:80
+        build:
+          context: .
+          dockerfile: BallastLane.Products.Presentation.WebAPI/Dockerfile
+        depends_on:
+            - ballastlane.DB
